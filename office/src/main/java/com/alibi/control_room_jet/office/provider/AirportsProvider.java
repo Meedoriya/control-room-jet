@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Getter
-@Setter
 @Component
 @ConfigurationProperties(prefix = "application")
 public class AirportsProvider {
