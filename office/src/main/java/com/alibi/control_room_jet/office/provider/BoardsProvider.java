@@ -11,19 +11,22 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Getter
 @Component
-public class BoardProvider {
+public class BoardsProvider {
     private final List<Board> boards = new ArrayList<>();
     private final Lock lock = new ReentrantLock(true);
 
-    private Optional<Board> getBoard(String boardName) {
+    public Optional<Board> getBoard(String boardName) {
         return boards.stream()
             .filter(board -> board.getName().equals(boardName))
             .findFirst();
     }
 
-    private void addBoard(Board board) {
+    public List<Board> getBoards() {
+        return boards;
+    }
+
+    public void addBoard(Board board) {
         try {
             lock.lock();
             Optional<Board> optionalBoard = getBoard(board.getName());
