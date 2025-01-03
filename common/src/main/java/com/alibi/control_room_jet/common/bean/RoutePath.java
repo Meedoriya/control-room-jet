@@ -21,6 +21,7 @@ public class RoutePath {
     }
 
     public void addProgress(double speed) {
+
         progress += speed;
         if (progress > 100) {
             progress = 100;
