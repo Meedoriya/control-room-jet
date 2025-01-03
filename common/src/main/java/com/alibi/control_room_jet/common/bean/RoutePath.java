@@ -20,18 +20,18 @@ public class RoutePath {
         this.progress = progress;
     }
 
-    private void addProgress(double speed) {
+    public void addProgress(double speed) {
         progress += speed;
         if (progress > 100) {
             progress = 100;
         }
     }
 
-    private boolean inProgress() {
+    public boolean inProgress() {
         return progress < 100;
     }
 
-    private boolean done() {
+    public boolean done() {
         return progress == 100;
     }
 }
